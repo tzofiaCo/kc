@@ -1,0 +1,10 @@
+C:\Users\Tzofia\Documents\GitHub\kc\KoC\KocDL\bin\Debug\netcoreapp3.1\KocDL.deps.json
+C:\Users\Tzofia\Documents\GitHub\kc\KoC\KocDL\bin\Debug\netcoreapp3.1\KocDL.runtimeconfig.json
+C:\Users\Tzofia\Documents\GitHub\kc\KoC\KocDL\bin\Debug\netcoreapp3.1\KocDL.runtimeconfig.dev.json
+C:\Users\Tzofia\Documents\GitHub\kc\KoC\KocDL\bin\Debug\netcoreapp3.1\KocDL.dll
+C:\Users\Tzofia\Documents\GitHub\kc\KoC\KocDL\bin\Debug\netcoreapp3.1\KocDL.pdb
+C:\Users\Tzofia\Documents\GitHub\kc\KoC\KocDL\obj\Debug\netcoreapp3.1\KocDL.AssemblyInfoInputs.cache
+C:\Users\Tzofia\Documents\GitHub\kc\KoC\KocDL\obj\Debug\netcoreapp3.1\KocDL.AssemblyInfo.cs
+C:\Users\Tzofia\Documents\GitHub\kc\KoC\KocDL\obj\Debug\netcoreapp3.1\KocDL.dll
+C:\Users\Tzofia\Documents\GitHub\kc\KoC\KocDL\obj\Debug\netcoreapp3.1\KocDL.pdb
+C:\Users\Tzofia\Documents\GitHub\kc\KoC\KocDL\obj\Debug\netcoreapp3.1\KocDL.csprojAssemblyReference.cache
