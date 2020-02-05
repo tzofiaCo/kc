@@ -1,0 +1,55 @@
+﻿@page
+@model KoCNihul.IndexModel
+
+@{
+    ViewData["Title"] = "קטגוריות";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>כל הקטגוריות</h1>
+
+<p>
+    <a asp-page="Create">יצירת קטגוריה חדשה</a>
+</p>
+<table class="table" dir="rtl">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Category[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category[0].Desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category[0].Context)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category[0].Active)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Category) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Context)
+            </td>
+            <td>
+                @Html.CheckBoxFor(modelItem => item.Active,new {disabled="true"})
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CategoryId">עריכה</a> |
+                <a asp-page="./Details" asp-route-id="@item.CategoryId">פרטים</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CategoryId">מחיקה</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

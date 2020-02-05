@@ -26,8 +26,8 @@ namespace KoC.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Active")
-                        .HasColumnType("int");
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
 
                     b.Property<int>("Context")
                         .HasColumnType("int");
@@ -99,6 +99,9 @@ namespace KoC.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("CourseEndDate")
                         .HasColumnType("datetime2");
 
@@ -143,8 +146,8 @@ namespace KoC.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Active")
-                        .HasColumnType("int");
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
 
                     b.Property<int>("Context")
                         .HasColumnType("int");
@@ -203,8 +206,8 @@ namespace KoC.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Active")
-                        .HasColumnType("int");
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
 
                     b.Property<int>("Context")
                         .HasColumnType("int");
@@ -228,8 +231,8 @@ namespace KoC.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Active")
-                        .HasColumnType("int");
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
 
                     b.Property<int>("Context")
                         .HasColumnType("int");

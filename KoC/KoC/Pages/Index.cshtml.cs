@@ -4,22 +4,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using KocDL;
 
-namespace KoC.Pages
+namespace KoC
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly KocDL.DKContext _context;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(KocDL.DKContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        public void OnGet()
-        {
+        public IList<Category> Category { get;set; }
 
+        public async Task OnGetAsync()
+        {
+            Category = await _context.Categories.ToListAsync();
         }
     }
 }

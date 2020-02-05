@@ -1,0 +1,50 @@
+﻿@page
+@model KoCNihul.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>יצירת קטגוריה חדשה</h1>
+
+<h4>קטגוריות</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Category.Title" class="control-label"></label>
+                <input asp-for="Category.Title" class="form-control" />
+                <span asp-validation-for="Category.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category.Desc" class="control-label"></label>
+                <input asp-for="Category.Desc" class="form-control" />
+                <span asp-validation-for="Category.Desc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category.Context" class="control-label"></label>
+                <input asp-for="Category.Context" class="form-control" />
+                <span asp-validation-for="Category.Context" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category.Active" class="control-label"></label>
+                <input asp-for="Category.Active" class="form-control" />
+                <span asp-validation-for="Category.Active" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="צור" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">חזור לרשימה</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

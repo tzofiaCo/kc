@@ -57,6 +57,8 @@ namespace KocDL
         public string CourseFrequency { get; set; }
         public string Notes { get; set; }
         public int CoursePrice { get; set; }
+        public bool Active { get; set; }
+        
 
 
     }
