@@ -30,13 +30,18 @@
                 <input asp-for="Gender.Context" class="form-control" />
                 <span asp-validation-for="Gender.Context" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Gender.Active" /> @Html.DisplayNameFor(model => model.Gender.Active)
-                </label>
+            @*<div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="Gender.Active" /> @Html.DisplayNameFor(model => model.Gender.Active)
+            </label>
+        </div>*@
+            <div class="form-group">
+                <label asp-for="Gender.Active" class="control-label"></label>
+                <input asp-for="Gender.Active" class="form-control" />
+                <span asp-validation-for="Gender.Active" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="שמור" class="btn btn-primary" />
             </div>
         </form>
     </div>

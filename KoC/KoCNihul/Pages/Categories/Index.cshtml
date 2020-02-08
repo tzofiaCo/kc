@@ -42,7 +42,8 @@
                 @Html.DisplayFor(modelItem => item.Context)
             </td>
             <td>
-                @Html.CheckBoxFor(modelItem => item.Active,new {disabled="true"})
+                @Html.DisplayFor(modelItem => item.Active)
+                @*@Html.CheckBoxFor(modelItem => item.Active, new { disabled = "true" })*@
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.CategoryId">עריכה</a> |
