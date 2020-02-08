@@ -1,0 +1,50 @@
+﻿@page
+@model KoCNihul.Pages.Diplomas.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>יצירת תעודה חדש</h1>
+
+<h4>תעודות</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Diploma.Title" class="control-label"></label>
+                <input asp-for="Diploma.Title" class="form-control" />
+                <span asp-validation-for="Diploma.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Diploma.Desc" class="control-label"></label>
+                <input asp-for="Diploma.Desc" class="form-control" />
+                <span asp-validation-for="Diploma.Desc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Diploma.Context" class="control-label"></label>
+                <input asp-for="Diploma.Context" class="form-control" />
+                <span asp-validation-for="Diploma.Context" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Diploma.Active" class="control-label"></label>
+                <input asp-for="Diploma.Active" class="form-control" />
+                <span asp-validation-for="Diploma.Active" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="צור" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">חזרה לרשימה</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

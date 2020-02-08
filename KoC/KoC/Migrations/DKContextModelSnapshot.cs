@@ -134,6 +134,19 @@ namespace KoC.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Context")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Desc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("DiplomaId");
 
                     b.ToTable("Diplomas");
@@ -281,6 +294,9 @@ namespace KoC.Migrations
 
                     b.Property<string>("WebSite")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("publishLevel")
+                        .HasColumnType("int");
 
                     b.HasKey("PublicationID");
 

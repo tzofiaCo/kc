@@ -1,0 +1,51 @@
+﻿@page
+@model KoCNihul.Pages.Populations.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>עריכת אוכלוסיה</h1>
+
+<h4>אוכלוסיות</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Population.PopulationId" />
+            <div class="form-group">
+                <label asp-for="Population.Title" class="control-label"></label>
+                <input asp-for="Population.Title" class="form-control" />
+                <span asp-validation-for="Population.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Population.Desc" class="control-label"></label>
+                <input asp-for="Population.Desc" class="form-control" />
+                <span asp-validation-for="Population.Desc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Population.Context" class="control-label"></label>
+                <input asp-for="Population.Context" class="form-control" />
+                <span asp-validation-for="Population.Context" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Population.Active" /> @Html.DisplayNameFor(model => model.Population.Active)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="שמור" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">חזרה לרשימה</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

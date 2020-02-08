@@ -40,7 +40,7 @@ namespace KocDL
         public List<Owner> Owners;
         public List<Publisher> Publishers;
     }
-    public class Diploma
+    public class Diploma : Dpt
     {
         [Required]
         public int DiplomaId { get; set; }

@@ -1,0 +1,50 @@
+﻿@page
+@model KoCNihul.Pages.OwnerTypes.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>יצירת סוג מפעיל/מפרסם</h1>
+
+<h4>סוגי מפעילים/מפרסמים </h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OwnerType.Title" class="control-label"></label>
+                <input asp-for="OwnerType.Title" class="form-control" />
+                <span asp-validation-for="OwnerType.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OwnerType.Desc" class="control-label"></label>
+                <input asp-for="OwnerType.Desc" class="form-control" />
+                <span asp-validation-for="OwnerType.Desc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OwnerType.Context" class="control-label"></label>
+                <input asp-for="OwnerType.Context" class="form-control" />
+                <span asp-validation-for="OwnerType.Context" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OwnerType.Active" class="control-label"></label>
+                <input asp-for="OwnerType.Active" class="form-control" />
+                <span asp-validation-for="OwnerType.Active" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

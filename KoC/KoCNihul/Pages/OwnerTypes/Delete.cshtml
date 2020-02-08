@@ -1,0 +1,47 @@
+﻿@page
+@model KoCNihul.Pages.OwnerTypes.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>מחיקה</h1>
+
+<h3>האם הינך בטוח שברצונך למחוק?</h3>
+<div>
+    <h4>סוגי מפעילים/מפרסמים</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OwnerType.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OwnerType.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OwnerType.Desc)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OwnerType.Desc)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OwnerType.Context)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OwnerType.Context)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OwnerType.Active)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OwnerType.Active)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="OwnerType.OwnerTypeId" />
+        <input type="submit" value="מחיקה" class="btn btn-danger" /> |
+        <a asp-page="./Index">חזרה לרשימה</a>
+    </form>
+</div>

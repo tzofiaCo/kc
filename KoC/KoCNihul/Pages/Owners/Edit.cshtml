@@ -1,0 +1,61 @@
+﻿@page
+@model KoCNihul.Pages.Owners.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>עריכה</h1>
+
+<h4>מפעילים</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Owner.OwnerId" />
+            <div class="form-group">
+                <label asp-for="Owner.OwnerTypeId" class="control-label"></label>
+                <select asp-for="Owner.OwnerTypeId" class="form-control" asp-items="ViewBag.OwnerTypeId"></select>
+                <span asp-validation-for="Owner.OwnerTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Owner.Name" class="control-label"></label>
+                <input asp-for="Owner.Name" class="form-control" />
+                <span asp-validation-for="Owner.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Owner.Desc" class="control-label"></label>
+                <input asp-for="Owner.Desc" class="form-control" />
+                <span asp-validation-for="Owner.Desc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Owner.Tel" class="control-label"></label>
+                <input asp-for="Owner.Tel" class="form-control" />
+                <span asp-validation-for="Owner.Tel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Owner.Adress" class="control-label"></label>
+                <input asp-for="Owner.Adress" class="form-control" />
+                <span asp-validation-for="Owner.Adress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Owner.Mail" class="control-label"></label>
+                <input asp-for="Owner.Mail" class="form-control" />
+                <span asp-validation-for="Owner.Mail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="שמור" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">חזרה לרשימה</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

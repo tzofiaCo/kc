@@ -1,0 +1,44 @@
+﻿@page
+@model KoCNihul.Pages.Diplomas.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>פרטים</h1>
+
+<div>
+    <h4>תעודות</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Diploma.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Diploma.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Diploma.Desc)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Diploma.Desc)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Diploma.Context)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Diploma.Context)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Diploma.Active)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Diploma.Active)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Diploma.DiplomaId">עריכה</a> |
+    <a asp-page="./Index">חזרה לרשימה</a>
+</div>

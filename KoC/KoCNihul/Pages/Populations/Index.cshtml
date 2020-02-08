@@ -1,0 +1,55 @@
+﻿@page
+@model KoCNihul.Pages.Populations.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>כל האוכלוסיות</h1>
+
+<p>
+    <a asp-page="Create">יצירת אוכלוסיה חדשה</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Population[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Population[0].Desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Population[0].Context)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Population[0].Active)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Population) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Context)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PopulationId">עריכה</a> |
+                <a asp-page="./Details" asp-route-id="@item.PopulationId">פרטים</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PopulationId">מחיקה</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
