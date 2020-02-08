@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using KocDL;
 
-namespace KoCNihul.Pages.Categories
+namespace KoCNihul.Pages.Genders
 {
     public class IndexModel : PageModel
     {
@@ -18,11 +18,11 @@ namespace KoCNihul.Pages.Categories
             _context = context;
         }
 
-        public IList<Category> Category { get;set; }
+        public IList<Gender> Gender { get;set; }
 
         public async Task OnGetAsync()
         {
-            Category = await _context.Categories.ToListAsync();
+            Gender = await _context.Genders.ToListAsync();
         }
     }
 }

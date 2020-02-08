@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using KocDL;
 
-namespace KoCNihul.Pages.Categories
+namespace KoCNihul.Pages.Genders
 {
     public class CreateModel : PageModel
     {
@@ -24,7 +24,7 @@ namespace KoCNihul.Pages.Categories
         }
 
         [BindProperty]
-        public Category Category { get; set; }
+        public Gender Gender { get; set; }
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
@@ -35,7 +35,7 @@ namespace KoCNihul.Pages.Categories
                 return Page();
             }
 
-            _context.Categories.Add(Category);
+            _context.Genders.Add(Gender);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using KocDL;
 
-namespace KoCNihul.Pages.Categories
+namespace KoCNihul.Pages.Genders
 {
     public class EditModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace KoCNihul.Pages.Categories
         }
 
         [BindProperty]
-        public Category Category { get; set; }
+        public Gender Gender { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,9 +29,9 @@ namespace KoCNihul.Pages.Categories
                 return NotFound();
             }
 
-            Category = await _context.Categories.FirstOrDefaultAsync(m => m.CategoryId == id);
+            Gender = await _context.Genders.FirstOrDefaultAsync(m => m.GenderId == id);
 
-            if (Category == null)
+            if (Gender == null)
             {
                 return NotFound();
             }
@@ -47,7 +47,7 @@ namespace KoCNihul.Pages.Categories
                 return Page();
             }
 
-            _context.Attach(Category).State = EntityState.Modified;
+            _context.Attach(Gender).State = EntityState.Modified;
 
             try
             {
@@ -55,7 +55,7 @@ namespace KoCNihul.Pages.Categories
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CategoryExists(Category.CategoryId))
+                if (!GenderExists(Gender.GenderId))
                 {
                     return NotFound();
                 }
@@ -68,9 +68,9 @@ namespace KoCNihul.Pages.Categories
             return RedirectToPage("./Index");
         }
 
-        private bool CategoryExists(int id)
+        private bool GenderExists(int id)
         {
-            return _context.Categories.Any(e => e.CategoryId == id);
+            return _context.Genders.Any(e => e.GenderId == id);
         }
     }
 }

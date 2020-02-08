@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using KocDL;
 
-namespace KoCNihul.Pages.Categories
+namespace KoCNihul.Pages.Genders
 {
     public class DeleteModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace KoCNihul.Pages.Categories
         }
 
         [BindProperty]
-        public Category Category { get; set; }
+        public Gender Gender { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,9 +28,9 @@ namespace KoCNihul.Pages.Categories
                 return NotFound();
             }
 
-            Category = await _context.Categories.FirstOrDefaultAsync(m => m.CategoryId == id);
+            Gender = await _context.Genders.FirstOrDefaultAsync(m => m.GenderId == id);
 
-            if (Category == null)
+            if (Gender == null)
             {
                 return NotFound();
             }
@@ -44,11 +44,11 @@ namespace KoCNihul.Pages.Categories
                 return NotFound();
             }
 
-            Category = await _context.Categories.FindAsync(id);
+            Gender = await _context.Genders.FindAsync(id);
 
-            if (Category != null)
+            if (Gender != null)
             {
-                _context.Categories.Remove(Category);
+                _context.Genders.Remove(Gender);
                 await _context.SaveChangesAsync();
             }
 
