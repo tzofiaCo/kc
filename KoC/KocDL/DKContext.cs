@@ -19,7 +19,45 @@ namespace KocDL
         public DbSet<Publisher> Publishers { get; set; }
         public DbSet<Gender> Genders { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CourseDetails>()
+                .HasOne(c => c.Course)
+                .WithMany(d=>d.CourseDetails).OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<Course>()
+               .HasOne(c => c.Category)
+               .WithMany(d => d.Courses).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Course>()
+              .HasOne(c => c.Diploma)
+              .WithMany(d => d.Courses).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Course>()
+              .HasOne(c => c.Gender)
+              .WithMany(d => d.Courses).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Course>()
+              .HasOne(c => c.Owner)
+              .WithMany(d => d.Courses).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Course>()
+  .HasOne(c => c.Population)
+  .WithMany(d => d.Courses).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Owner>()
+  .HasOne(c => c.OwnerType)
+  .WithMany(d => d.Owners).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Publication>()
+.HasOne(c => c.CourseDetails)
+.WithOne(d => d.Publication).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<CourseDetails>()
+.HasOne(p => p.Publication)
+.WithOne(d => d.CourseDetails).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Publisher>()
+  .HasOne(c => c.OwnerType)
+  .WithMany(d => d.Publishers).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Publication>()
+  .HasOne(c => c.Publisher)
+  .WithMany(d => d.Publications).OnDelete(DeleteBehavior.Cascade);
+
+
+        }
 
 
 

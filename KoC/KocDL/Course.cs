@@ -9,10 +9,11 @@ namespace KocDL
 {
    public class Course
     {
+        [Required]
         public int CourseID { get; set; }
         //fk to category
         public int CategoryId { get; set; }
-        public Category Category;
+        public Category Category { get; set; }
         //fk to population
         public int PopulationId { get; set; }
         public Population Population { get; set; }
@@ -37,26 +38,26 @@ namespace KocDL
     }
     public class CourseDetails
     {
-        
+        [Required]
         public int CourseDetailsID { get; set; }
         //fk to courses
-        
-        public int CourseId;
-        
-        public Course Course;
-
+        [Required]
+        public int CourseId { get; set; }
+        [Required]
+        public Course Course { get; set; }
         //fk to publication
-        
+        [Required]
         public Publication Publication { get; set; }
-        
-        
+
+        [Required]
         public DateTime CourseStartDate { get; set; }
-        
+        [Required]
         public DateTime CourseEndDate { get; set; }
-        
-        public string CourseFrequency { get; set; }
+
+        public int CourseFrequency { get; set; }
         public string Notes { get; set; }
         public int CoursePrice { get; set; }
+        [Required]
         public bool Active { get; set; }
 
         

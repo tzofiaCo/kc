@@ -13,6 +13,20 @@
     <Compile Remove="Migrations\20200205110022_addRel.Designer.cs" />
     <Compile Remove="Migrations\20200205110412_try.cs" />
     <Compile Remove="Migrations\20200205110412_try.Designer.cs" />
+    <Compile Remove="Migrations\20200209080948_try.cs" />
+    <Compile Remove="Migrations\20200209080948_try.Designer.cs" />
+    <Compile Remove="Migrations\20200209081336_try.cs" />
+    <Compile Remove="Migrations\20200209081336_try.Designer.cs" />
+    <Compile Remove="Migrations\20200209084455_try.cs" />
+    <Compile Remove="Migrations\20200209084455_try.Designer.cs" />
+    <Compile Remove="Migrations\20200209085511_try.cs" />
+    <Compile Remove="Migrations\20200209085511_try.Designer.cs" />
+    <Compile Remove="Migrations\20200209092450_try.cs" />
+    <Compile Remove="Migrations\20200209092450_try.Designer.cs" />
+    <Compile Remove="Migrations\20200209092641_try.cs" />
+    <Compile Remove="Migrations\20200209092641_try.Designer.cs" />
+    <Compile Remove="Migrations\20200209092759_try.cs" />
+    <Compile Remove="Migrations\20200209092759_try.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

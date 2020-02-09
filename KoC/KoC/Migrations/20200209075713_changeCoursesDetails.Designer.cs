@@ -4,14 +4,16 @@ using KocDL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace KoC.Migrations
 {
     [DbContext(typeof(DKContext))]
-    partial class DKContextModelSnapshot : ModelSnapshot
+    [Migration("20200209075713_changeCoursesDetails")]
+    partial class changeCoursesDetails
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,8 +83,6 @@ namespace KoC.Migrations
 
                     b.HasKey("CourseID");
 
-                    b.HasIndex("CategoryId");
-
                     b.HasIndex("DiplomaId");
 
                     b.HasIndex("GenderId");
@@ -110,7 +110,7 @@ namespace KoC.Migrations
                     b.Property<int>("CourseFrequency")
                         .HasColumnType("int");
 
-                    b.Property<int>("CourseId")
+                    b.Property<int?>("CourseID")
                         .HasColumnType("int");
 
                     b.Property<int>("CoursePrice")
@@ -124,7 +124,7 @@ namespace KoC.Migrations
 
                     b.HasKey("CourseDetailsID");
 
-                    b.HasIndex("CourseId");
+                    b.HasIndex("CourseID");
 
                     b.ToTable("CourseDetails");
                 });
@@ -349,32 +349,26 @@ namespace KoC.Migrations
 
             modelBuilder.Entity("KocDL.Course", b =>
                 {
-                    b.HasOne("KocDL.Category", "Category")
-                        .WithMany("Courses")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("KocDL.Diploma", "Diploma")
-                        .WithMany("Courses")
+                        .WithMany()
                         .HasForeignKey("DiplomaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("KocDL.Gender", "Gender")
-                        .WithMany("Courses")
+                        .WithMany()
                         .HasForeignKey("GenderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("KocDL.Owner", "Owner")
-                        .WithMany("Courses")
+                        .WithMany()
                         .HasForeignKey("OwnerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("KocDL.Population", "Population")
-                        .WithMany("Courses")
+                        .WithMany()
                         .HasForeignKey("PopulationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -382,17 +376,15 @@ namespace KoC.Migrations
 
             modelBuilder.Entity("KocDL.CourseDetails", b =>
                 {
-                    b.HasOne("KocDL.Course", "Course")
+                    b.HasOne("KocDL.Course", null)
                         .WithMany("CourseDetails")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("CourseID");
                 });
 
             modelBuilder.Entity("KocDL.Owner", b =>
                 {
                     b.HasOne("KocDL.OwnerType", "OwnerType")
-                        .WithMany("Owners")
+                        .WithMany()
                         .HasForeignKey("OwnerTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -416,7 +408,7 @@ namespace KoC.Migrations
             modelBuilder.Entity("KocDL.Publisher", b =>
                 {
                     b.HasOne("KocDL.OwnerType", "OwnerType")
-                        .WithMany("Publishers")
+                        .WithMany()
                         .HasForeignKey("OwnerTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

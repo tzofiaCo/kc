@@ -37,6 +37,7 @@ namespace KocDL
         [DisplayName("כתובת אתר")]
         public string WebSite { get; set; }
         [DisplayName("רמת פרסום")]
+        [Required]
         public PublishLevel PublishLevel { get; set; }
 
     }

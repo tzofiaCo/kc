@@ -25,11 +25,12 @@ namespace KocDL
         [Required]
         [DisplayName("טלפון")]
         public string Tel { get; set; }
+        [Required]
         [DisplayName("כתובת")]
         public string Adress { get; set; }
         [Required]
         [DisplayName("מייל")]
         public string Mail { get; set; }
-        public List<Course> Courses;
+        public List<Course> Courses { get; set; }
     }
 }
